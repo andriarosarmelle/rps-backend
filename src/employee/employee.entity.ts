@@ -23,20 +23,20 @@ export class Employee {
   @JoinColumn({ name: 'company_id' })
   company: Company;
 
-  @Column()
-  first_name: string;
+  @Column({ type: 'varchar', nullable: true })
+  first_name: string | null;
 
-  @Column()
-  last_name: string;
+  @Column({ type: 'varchar', nullable: true })
+  last_name: string | null;
 
-  @Column({ unique: true })
-  email: string;
+  @Column({ type: 'varchar', unique: true, nullable: true })
+  email: string | null;
 
-  @Column({ nullable: true })
-  phone: string;
+  @Column({ type: 'varchar', nullable: true })
+  phone: string | null;
 
-  @Column({ nullable: true })
-  department: string;
+  @Column({ type: 'varchar', nullable: true })
+  department: string | null;
 
   @Column({ unique: true, nullable: true })
   survey_token: string;
